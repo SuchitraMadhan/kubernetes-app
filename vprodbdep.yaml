@@ -1,4 +1,4 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vprodb
@@ -13,7 +13,6 @@ spec:
     metadata:
       labels:
         app: vprodb
-    spec:
       containers:
        - name: vprodb
          image: suchitravenugopal13/vprofileapp:latest
