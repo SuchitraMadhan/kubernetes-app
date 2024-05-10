@@ -32,14 +32,14 @@ spec:
       nodeSelector:
         zone: us-east-1a
       volumes:
-      - name: vpro-db-data
-        awsElasticBlockStore:
-          volumeID: vol-02b34a7bf3b295f16
-          fsType: ext4
+       - name: vpro-db-data
+         awsElasticBlockStore:
+           volumeID: vol-02b34a7bf3b295f16
+           fsType: ext4
       initContainers:
-      - name: busybox
-        image: busybox:latest
-        args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
-        volumeMounts:
+       - name: busybox
+         image: busybox:latest
+         args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
+         volumeMounts:
           - name: vpro-db-data
             mountPath: /var/lib/mysql
